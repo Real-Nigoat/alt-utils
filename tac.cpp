@@ -9,7 +9,7 @@
 int main(int argc, char *argv[]) {
   if (argc < 2) {
     std::cout << "Please Enter a valid file\n";
-    std::cout << "Example: ./main file.txt\n";
+    std::cout << "Example: ./tac file.txt\n";
     return 1;
   }
   std::string file_name = argv[1];
