@@ -7,9 +7,15 @@ alt utils is a small alternative to gnu core utils
 
 alt utils is not finished(obviously), **here is whats working:**
 
-sl working, but not much features, it prints the files in your current directory
+## UTILS MADE:
 
-tac is also working like sl, but it doesnt have any other features than priting the stuff inside your specified file
+**tac: a cat like command, not feature rich**
+
+**prep: a grep like command, not feature rich**
+
+**sl: a ls like command, not feature rich**
+
+**they are not feature rich, but they work, and have the basics, and they are a lot smaller**
 
 this is also supposed to be a smaller alternative to gnu core utils, since almost every util is more then 800 lines, this project wants to fix that by making everything smaller and faster. and hopefully more features.
 
