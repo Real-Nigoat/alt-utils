@@ -5,7 +5,11 @@ alt utils is a small alternative to gnu core utils
 
 **info:**
 
-alt utils is not finished(obviously), tac is not done, and sl is not done too, while tac does work, and can echo's files you specify, it doesnt have much features, but sl is full of errors, nothing is working yet in it.
+alt utils is not finished(obviously), **here is whats working:**
+
+sl working, but not much features, it prints the files in your current directory
+
+tac is also working like sl, but it doesnt have any other features than priting the stuff inside your specified file
 
 this is also supposed to be a smaller alternative to gnu core utils, since almost every util is more then 800 lines, this project wants to fix that by making everything smaller and faster. and hopefully more features.
 
