@@ -2,6 +2,8 @@
  * Copyright (C) 2026 alt-utils
  */
 
+// this still doesnt 100% work, i need to fix when choosing some path it doesnt work, and if path is empty doesnt work too
+
 #include <filesystem>
 #include <iostream>
 #include <string>
