@@ -2,45 +2,31 @@
  * Copyright (C) 2026 alt-utils
  */
 
-// this still doesnt 100% work, i need to fix when choosing some path it doesnt work, and if path is empty doesnt work too
+// i made the code better, and working
 
 #include <filesystem>
 #include <iostream>
-#include <string>
-#include <sys/stat.h> // this took me 2 hours to realize i needed to include this to make 'struct stat sb' work
 
 namespace fs = std::filesystem; // this basically means "name std::filesystem to just fs"
 
-int main(int argc, char *argv[]) {
-    std::string path = argv[1];
+    int main(int argc, char* argv[]) {
+        fs::path directory;
 
-
-    if (path.empty()) {
-        std::string current_directory = fs::current_path(); // get user's current path
-        struct stat sb;
-        for (const auto& entry : fs::directory_iterator(current_directory)) {
-            std::filesystem::path outfilename = entry.path();
-                    std::string outfilename_str = outfilename.string();
-                    const char* path = outfilename_str.c_str();
-                    // testing whether the path points to a
-                    // non-directory or not if it does it displays path
-                    if (stat(path, &sb) == 0 && !(sb.st_mode & S_IFDIR))
-                        std ::cout << path << std::endl;
+        if (argc > 1 && argv[1][0] != '\0') {
+            directory = argv[1];
+        } else {
+            directory = fs::current_path();
         }
-        // same thing, but if it doesnt have any path specified, it lists file in the current directory YOU are in.
+
+        try {
+            for (const auto& entry : fs::directory_iterator(directory)) {
+                std::cout << entry.path().string() << '\n';
+            }
+            }
+         catch (const fs::filesystem_error& e) {
+            std::cerr << "Could not read directory: " << e.what() << '\n';
+            return 1;
+        }
+
+        return 0;
     }
-
-
-    struct stat sb;
-    for (const auto& entry : fs::directory_iterator(path)) {
-        std::filesystem::path outfilename = entry.path();
-                std::string outfilename_str = outfilename.string();
-                const char* path = outfilename_str.c_str();
-                // testing whether the path points to a
-                // non-directory or not if it does it displays path
-                if (stat(path, &sb) == 0 && !(sb.st_mode & S_IFDIR))
-                    std ::cout << path << std::endl;
-    }
-
-    return 0; // best line ever
-}
