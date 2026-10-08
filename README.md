@@ -25,4 +25,4 @@
 
 * Want to contribute ? im more than happy, check [CONTRIBUTING.md](https://github.com/Real-Nigoat/alt-utils/blob/master/CONTRIBUTING.md) for more informations!
 
-* NOTE: im building this to learn more about c++, but it will be maintained, and hopefully it will become bigger by time
+* NOTE: im building this to learn more about c++, but it will be maintained, and hopefully it will become bigger by time(this is a joke sorry)
